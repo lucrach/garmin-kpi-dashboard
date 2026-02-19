@@ -4,7 +4,7 @@ from fastapi.responses import FileResponse
 
 from app.routes import login, sleep, stress, body_battery, hrv, breathing, daily
 
-app = FastAPI(title="Garmin Health Dashboard")
+app = FastAPI(title="Garmin KPI Dashboard")
 
 # API routes
 app.include_router(login.router, prefix="/api")

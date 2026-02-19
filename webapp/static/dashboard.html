@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garmin Health Dashboard</title>
+    <title>Garmin KPI Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="/static/css/app.css">
 </head>
 <body class="bg-gray-900 min-h-screen">
@@ -19,7 +20,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                           d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
                 </svg>
-                <h1 class="text-lg font-bold text-white">Garmin Health</h1>
+                <h1 class="text-lg font-bold text-white">Garmin KPI</h1>
             </div>
             <div class="flex items-center gap-2 sm:gap-3">
                 <button id="btn-prev" class="text-gray-400 hover:text-white px-2 py-1 rounded hover:bg-gray-700 transition">&larr;</button>
@@ -48,6 +49,15 @@
                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
             </svg>
             Loading data...
+        </div>
+    </div>
+
+    <!-- Error banner -->
+    <div id="error-banner" class="hidden max-w-7xl mx-auto px-4 sm:px-6 mt-4">
+        <div class="bg-red-900/50 text-red-300 text-sm p-3 rounded-lg flex items-center justify-between">
+            <span id="error-text"></span>
+            <button onclick="document.getElementById('error-banner').classList.add('hidden')"
+                    class="text-red-400 hover:text-red-200 ml-3">&times;</button>
         </div>
     </div>
 

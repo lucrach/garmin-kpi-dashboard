@@ -8,7 +8,18 @@
     let currentDate = todayStr();
     const datePicker = document.getElementById("date-picker");
     const loadingEl = document.getElementById("loading");
+    const errorBanner = document.getElementById("error-banner");
+    const errorText = document.getElementById("error-text");
     datePicker.value = currentDate;
+
+    function showError(msg) {
+        errorText.textContent = msg;
+        errorBanner.classList.remove("hidden");
+    }
+
+    function hideError() {
+        errorBanner.classList.add("hidden");
+    }
 
     // Initialize charts
     createSleepStagesChart("chart-sleep-stages");
@@ -25,9 +36,11 @@
         datePicker.value = dateStr;
         loadingEl.classList.remove("hidden");
 
+        hideError();
+
         try {
-            // 7-day range for trends
-            const trendStart = daysAgo(6);
+            // 7-day range ending on the selected date
+            const trendStart = daysAgo(6, dateStr);
 
             // Fetch everything in parallel
             const [sleepSummary, sleepIntraday, stress, bodyBattery, hrv, breathing, dailyTrend, sleepTrend] =
@@ -104,6 +117,7 @@
             }
         } catch (err) {
             console.error("Failed to load data:", err);
+            showError("Failed to load data. Check that InfluxDB is running.");
         } finally {
             loadingEl.classList.add("hidden");
         }

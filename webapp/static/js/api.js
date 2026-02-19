@@ -5,7 +5,11 @@ const API = {
             window.location.href = "/";
             return null;
         }
-        if (!res.ok) return null;
+        if (!res.ok) {
+            const msg = `API error ${res.status} on ${endpoint}`;
+            console.error(msg);
+            throw new Error(msg);
+        }
         return res.json();
     },
 
@@ -38,8 +42,8 @@ function todayStr() {
     return formatDate(new Date());
 }
 
-function daysAgo(n) {
-    const d = new Date();
+function daysAgo(n, from) {
+    const d = from ? new Date(from + "T12:00:00") : new Date();
     d.setDate(d.getDate() - n);
     return formatDate(d);
 }

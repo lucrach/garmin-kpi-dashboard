@@ -1,6 +1,5 @@
 garminconnect-tokens/
 override-default-vars.env
 kubernetes-spec.yaml
-webapp/__pycache__/
-webapp/app/__pycache__/
-webapp/app/routes/__pycache__/
+compose.yml
+__pycache__/

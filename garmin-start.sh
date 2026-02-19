@@ -1,5 +1,5 @@
 #!/bin/bash
-# Start Garmin Grafana Dashboard
+# Start Garmin KPI Dashboard
 # Usage: ~/garmin-kpi-dashboard/garmin-start.sh
 
 set -e
@@ -19,14 +19,14 @@ if ! "$DOCKER" info &>/dev/null; then
 fi
 
 # Start the stack (build webapp if needed)
-echo "Starting Garmin Health Dashboard..."
+echo "Starting Garmin KPI Dashboard..."
 cd "$SCRIPT_DIR"
 "$DOCKER" compose up -d --build
 
 echo ""
 echo "All containers started!"
 echo ""
-echo "  Health Dashboard:  http://localhost:5001"
+echo "  KPI Dashboard:     http://localhost:5001"
 echo "  Grafana (advanced): http://localhost:3030  (admin / admin)"
 echo ""
 echo "To stop: ~/garmin-kpi-dashboard/garmin-stop.sh"
