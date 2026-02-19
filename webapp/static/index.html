@@ -47,6 +47,35 @@
             </button>
         </form>
 
+        <div id="mfa-section" class="hidden">
+            <div class="text-center mb-4">
+                <svg class="w-10 h-10 text-blue-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                <p class="text-gray-300 text-sm">A verification code was sent to your email.</p>
+                <p class="text-gray-500 text-xs mt-1">Check your inbox and enter the code below.</p>
+            </div>
+            <form id="mfa-form">
+                <div class="mb-4">
+                    <label class="block text-gray-300 text-sm font-medium mb-1.5">Verification Code</label>
+                    <input type="text" id="mfa-code" name="mfa-code" required
+                           placeholder="Enter code" maxlength="7" autocomplete="one-time-code"
+                           class="w-full p-3 bg-gray-700 text-white rounded-lg border border-gray-600
+                                  placeholder-gray-500 focus:border-blue-500 focus:ring-1 focus:ring-blue-500
+                                  focus:outline-none transition text-center text-lg tracking-widest">
+                </div>
+                <button type="submit" id="mfa-btn"
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg
+                               font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed">
+                    Verify
+                </button>
+            </form>
+            <button id="mfa-back" class="w-full text-gray-400 hover:text-white text-sm mt-3 py-2 transition">
+                Back to login
+            </button>
+        </div>
+
         <p class="text-gray-500 text-xs text-center mt-6">
             Your credentials are sent directly to Garmin Connect.
             Nothing is stored on disk except authentication tokens.
