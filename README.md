@@ -1,4 +1,4 @@
-# Garmin Health Dashboard
+# Garmin KPI Dashboard
 
 A self-hosted web dashboard that pulls your health data from Garmin Connect and visualises it in a clean, dark-themed UI. No Grafana expertise needed — just log in with your Garmin account and browse your data.
 
@@ -39,8 +39,8 @@ All data stays on your machine. Nothing is sent to third parties.
 
 ```bash
 # Clone
-git clone https://github.com/lucrach/garmin-health-dashboard.git
-cd garmin-health-dashboard
+git clone https://github.com/lucrach/garmin-kpi-dashboard.git
+cd garmin-kpi-dashboard
 
 # Setup
 mkdir -p garminconnect-tokens && chmod 777 garminconnect-tokens

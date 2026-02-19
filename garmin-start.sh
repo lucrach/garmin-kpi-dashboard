@@ -1,6 +1,6 @@
 #!/bin/bash
 # Start Garmin Grafana Dashboard
-# Usage: ~/garmin-grafana/garmin-start.sh
+# Usage: ~/garmin-kpi-dashboard/garmin-start.sh
 
 set -e
 
@@ -29,4 +29,4 @@ echo ""
 echo "  Health Dashboard:  http://localhost:5001"
 echo "  Grafana (advanced): http://localhost:3030  (admin / admin)"
 echo ""
-echo "To stop: ~/garmin-grafana/garmin-stop.sh"
+echo "To stop: ~/garmin-kpi-dashboard/garmin-stop.sh"

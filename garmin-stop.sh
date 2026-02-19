@@ -1,6 +1,6 @@
 #!/bin/bash
 # Stop Garmin Grafana Dashboard
-# Usage: ~/garmin-grafana/garmin-stop.sh
+# Usage: ~/garmin-kpi-dashboard/garmin-stop.sh
 # Note: Your data is safely stored in Docker volumes and will persist.
 
 set -e
@@ -14,4 +14,4 @@ cd "$SCRIPT_DIR"
 
 echo ""
 echo "All containers stopped. Your data is preserved."
-echo "To start again: ~/garmin-grafana/garmin-start.sh"
+echo "To start again: ~/garmin-kpi-dashboard/garmin-start.sh"
